@@ -8,9 +8,9 @@ class DistroCreate(CreateView):
     model = Distro
     fields = ['nombre']
     success_url = reverse_lazy('distro_lista')
-    def form_valid(self, form):
-        form.instance.created_by = self.request.user
-        return super(DistroCreate, self).form_valid(form)
+    #def form_valid(self, form):
+    #    form.instance.created_by = self.request.user
+    #    return super(DistroCreate, self).form_valid(form)
 
 class DistroUpdate(UpdateView):
     model = Distro
