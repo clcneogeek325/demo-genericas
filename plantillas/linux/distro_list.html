@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Distribuciones</title>
+</head>
+<body>
+         <h2> Distros</h2>
+                 <a href="{% url  'distro_add'  %}">
+                         <button>
+                                 Nuevo
+                         </button>
+                  </a>
+             <ul>
+                  {% for d in object_list %}
+                         <li>{{ d.nombre }}
+                         <a href="{% url  'distro_delete' d.id %}">
+                                 <button>Eliminar</button>
+                         </a>
+                         <a href="{% url  'distro_update' d.id %}">
+                                 <button>Actualizar</button>
+                         </a>
+                         </li>
+                  {% endfor %}
+             </ul>
+</body>
+</html>
